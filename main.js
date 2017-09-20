@@ -6,10 +6,10 @@ var mainVm = new Vue({
         oldUserName : '', 
         oldUserPassword : '', 
         foodName : '',
-        foodObj: {
-            text:'',
-            calories:0,
-        },
+        // foodObj: {
+        //     text:'',
+        //     calories:0,
+        // },
         mealName : '', 
         mealDate : '', 
         user    : {}, 
@@ -381,9 +381,9 @@ var mainVm = new Vue({
                 type: 'POST',
                 data: JSON.stringify({
                     _hawkuser: mainVm.user._id,
-                    foodname: this.foodObj.text, 
+                    foodname: this.foodName, 
                     mealname: this.mealName, 
-                    calories: this.foodObj.value, 
+                    calories: this.foodObj, 
                     mealdate: this.mealDate}),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json',

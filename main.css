@@ -1,5 +1,6 @@
 body {
     margin-left: 20px;
+    background-image: url('https://i.imgur.com/6X4RCaV.jpg');
 }
 
 .frontTitle {
@@ -33,6 +34,7 @@ body {
     border: 1px solid black;
     width: 800px;
     border-radius: 5px;
+    background-color:white;
 }
 .welcome {
     padding: 10px;
@@ -40,6 +42,7 @@ body {
     /* border: 1px solid black; */
     border-radius: 5px;
     width: 800px;
+    background-color:white;
 }
 .logo {
     margin: 20px;
@@ -61,7 +64,8 @@ body {
     margin: 20px;
     position: relative;
     right: 10px;
-    width: 800px;   
+    width: 800px;
+    background-color:white;   
 }
 
 .formItems {

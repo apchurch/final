@@ -17,18 +17,9 @@
         </br>
         <h3 class="title">Select your stock shares and prices!</h3>
         <form v-on:submit="createMeal" class="form">
-            <select v-model="foodObj" options="myOptions">
-                <option v-for="option in myOptions" v-bind:value="option">
-                {{ option.text }}
-                </option>
-
-            </select>
-            <select v-model="mealName">
-                <option>Breakfast</option>
-                <option>Lunch</option>
-                <option>Dinner</option>
-                <option>Snack</option>
-            </select>
+            <input v-model="foodName" placeholder= "Stock Name">    
+           <input v-model="mealName" placeholder= "Number of shares">
+             <input v-model="foodObj" placeholder= "Stock Price">    
             <input v-model="mealDate" type="date" placeholder="Date">
             <input type="submit" value="Submit">
         </form>
@@ -42,7 +33,7 @@
                 <tr>
                     <th>Stock Name</th>
                     <th>Number of shares</th>
-                    <th>Price</th>
+                    <th>Price/share</th>
                     <th>Date</th>
                 </tr>
             </thead>
