@@ -34,7 +34,7 @@ var HawkUser = mongoose.model('hawkuser', userSchema); // 'hawkuser' is sigular 
 var mealSchema = new mongoose.Schema({
     // name: String, // we think we don't need this 8/21
     _hawkuser : { type: mongoose.Schema.Types.ObjectId }, 
-    foodname: { type: String, required: true },
+    stockname: { type: String, required: true },
     mealname: { type: String, required: true },
     calories: { type: Number, required: true },
     mealdate: { type: Date, required: true },

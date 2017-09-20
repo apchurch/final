@@ -381,7 +381,7 @@ var mainVm = new Vue({
                 type: 'POST',
                 data: JSON.stringify({
                     _hawkuser: mainVm.user._id,
-                    foodname: this.foodName, 
+                    stockname: this.stockName, 
                     mealname: this.mealName, 
                     calories: this.foodObj, 
                     mealdate: this.mealDate}),
