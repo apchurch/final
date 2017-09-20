@@ -18,8 +18,8 @@
         <h3 class="title">Select your stock shares and prices!</h3>
         <form v-on:submit="createMeal" class="form">
             <input v-model="stockName" placeholder= "Stock Name">    
-           <input v-model="mealName" placeholder= "Number of shares">
-             <input v-model="foodObj" placeholder= "Stock Price">    
+           <input v-model="shareNumber" placeholder= "Number of shares">
+             <input v-model="sharePrice" placeholder= "Stock Price">    
             <input v-model="mealDate" type="date" placeholder="Date">
             <input type="submit" value="Submit">
         </form>
@@ -40,8 +40,8 @@
             <tbody>
                 <tr v-for="x in allMeals">
                     <td>{{x.stockname}} </td>
-                    <td>{{x.mealname}}</td>
-                    <td>{{x.calories}}</td>
+                    <td>{{x.sharenumber}}</td>
+                    <td>{{x.price}}</td>
                     <td>{{x.mealdate.toLocaleDateString()}}</td>
                 </tr>
             </tbody>

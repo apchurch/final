@@ -35,8 +35,8 @@ var mealSchema = new mongoose.Schema({
     // name: String, // we think we don't need this 8/21
     _hawkuser : { type: mongoose.Schema.Types.ObjectId }, 
     stockname: { type: String, required: true },
-    mealname: { type: String, required: true },
-    calories: { type: Number, required: true },
+    sharenumber: { type: String, required: true },
+    price: { type: Number, required: true },
     mealdate: { type: Date, required: true },
   // we'll need some error handling for duplicate usernames and emails
 })
