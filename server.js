@@ -36,6 +36,71 @@ app.post('/hawk-user', function(req, res, next){
     })
 
 })
+app.post('/signin-user', function(req, res, next){
+    console.log(req.body)
+    //our mongoose schema should handle converting the age string to a number
+    HawkUser.findOne({username: req.body.username}, function(err, data){
+        if (err){ next(err) }
+        else if (data) {
+            user=data
+            console.log('this user signed in: ', data)
+            // res.status(200).send(data)
+            res.send({success: '200'})
+        } else {
+            res.send({failure:'Failed to login'})
+        }
+    })
 
+})
+app.post('/create-meal', function(req, res, next){
+    console.log(req.body)
+    //our mongoose schema should handle converting the age string to a number
+    var newMeal = new HawkMeal(req.body)
+    newMeal.save(function(err){
+        if (err){ next(err) }
+        else {
+            res.send({success:'Successfully entered a meal!'})
+        }
+    })
+
+})
+app.get('/all-meals', function(req, res, next){
+    console.log(req.body)
+    HawkMeal.find(function (err, hawkmeal) {
+    if (err) {
+      return handleError(err);
+    }
+    console.log('this is hawkmeal: ', hawkmeal)
+    res.send(hawkmeal)
+    })
+
+})
+
+app.get('/me', function(req, res){
+    res.send(user)
+})
+app.get('/me/meals', function(req, res, next){
+    HawkMeal.find({_hawkuser: user._id}, function(err, data){
+        if (err) { next(err) 
+        } else {
+            res.send(data)
+            console.log(data)
+        }
+    })
+})
+app.get('/read-data', function(req, res, next){
+    console.log(data)
+    HawkMeal.find({}, function(err, data){
+        if (err) { next(err) }
+        else {
+            res.send(data)
+        }
+        // console.log(data)
+    })
+})
+app.use(function(err, req, res, next){
+    console.log('something went wrong: ', err)
+    res.send(err)
+})
 
 app.listen(8080)
